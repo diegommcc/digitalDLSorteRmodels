@@ -91,28 +91,25 @@
 "breast.chung.generic"
 
 #' Pre-trained \code{DigitalDLSorter} DNN model for deconvolution
-#' of tumor-infiltrating lymphocytes (TILs) present in colorectal cancer
-#' environment
+#' of colorectal cancer samples
 #'
 #' \code{DigitalDLSorter} DNN model stored as a list built and
-#' trained with single-cell data from Li et al., 2017 (GSE81861). This model
-#' allows the enumeration and quantification of immune infiltrated cell types in
-#' colorectal cancer environment. This data set consists of single-cell RNA-seq
-#' profiles from 11 patients from different tumor etiology and stages (see
-#' Torroja and Sanchez-Cabo, 2019 and Li et al., 2017 for more details). The
-#' analysis and characterization of cells was carried out by the authors of
-#' \pkg{digitalDLSorteR}.
+#' trained on single-cell data from Lee, Hong, Etlioglu Cho et al., 2020 
+#' (GSE132465, GSE132257 and GSE144735). 
 #'
-#' This model considers 10 cell types: cancer cells (CRC), epithelial (Ep),
-#' monocytes (M), macrophages (Mc), fibroblast (Fb), CD4 T cells (CD4), CD8 T
-#' cells (CD8Gp), CD8 T cells (CD8Gn), germinal center B cells (gB) and mature B
-#' cells (pB).
-#'
-#' The genes considered are 36477 in SYMBOL notation.
+#' This model considers the following 22 cell types: Anti-inflammatory_MFs 
+#' (macrophages), B cells, CD4+ T cells, CD8+ T cells, ECs (endothelial cells), 
+#' ECs_tumor, Enterocytes, Epithelial cells, Epithelial_cancer_cells, 
+#' MFs_SPP1+, Mast cells, Myofibroblasts, NK cells, Pericytes, Plasma_cells, 
+#' Pro-inflammatory_MFs, Regulatory T cells, Smooth muscle cells, Stromal cells, 
+#' T follicular helper cells, cDC (conventional dendritic cells), gamma delta T 
+#' cells. 
+#' 
+#' It only accepts genes in SYMBOL annotation. 
 #'
 #' The model consists of 2 hidden layers with 200 neurons per layer trained with
-#' 'kullback_leibler_divergence' loss function, batch size equal to 128 and a
-#' number of epochs equal to 30.
+#' 'kullback_leibler_divergence' loss function, batch size equal to 64 and a
+#' number of epochs equal to 60.
 #'
 #' @format A \code{DigitalDLSorterDNN} object with the following
 #'   slots: \describe{ \item{model}{Trained DNN model.}
@@ -122,15 +119,11 @@
 #'   considered by the model.} \item{features}{Features (genes) considered by
 #'   the model.} }
 #'
-#' @source \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81861}
+#' @source \url{https://www.nature.com/articles/s41588-020-0636-z}
 #'
-#' @references Li, H., Courtois, E. T., Sengupta, D., Tan, Y., Chen, K. H., Goh,
-#'   J. J. L., et al. (2017). Reference component analysis of single-cell
-#'   transcriptomes elucidates cellular heterogeneity in human colorectal
-#'   tumors. Nat. Genet. 49 (5), 708–718. doi: \doi{10.1038/ng.3818}
-#'
-#'   Torroja, C. and Sánchez-Cabo, F. (2019). digitalDLSorter: A Deep Learning
-#'   algorithm to quantify immune cell populations based on scRNA-Seq data.
-#'   Frontiers in Genetics 10, 978. doi: \doi{10.3389/fgene.2019.00978}
+#' @references Lee, HO., Hong, Y., Etlioglu, H.E. et al. (2020) 
+#'   Lineage-dependent gene expression programs influence the immune landscape 
+#'   of colorectal cancer. Nat Genet 52, 594–603. 
+#'   \doi{10.1038/s41588-020-0636-z}
 #'   
-"colorectal.li"
+"DDLS.colon.lee"
